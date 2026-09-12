@@ -1,0 +1,14 @@
+# Legacy URLs from the previous site — preserve Phase 1 SEO equity
+/index.html              /                          301
+/platform.html           /ai-managed-pipeline       301
+/platform                /ai-managed-pipeline       301
+/pricing.html            /pricing                   301
+
+# Trailing-slash consistency
+/insights/               /insights                  301
+/about/                  /about                     301
+/readiness/              /readiness                 301
+
+# Cold-sending domain entry points (vgl.studio -> canonical)
+/readiness-check         /readiness                 301
+/growth-hub              /insights                  301

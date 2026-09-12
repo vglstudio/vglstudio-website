@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Growth Readiness Check | 3-Minute Diagnostic, VGL Studio</title>
+<meta name="description" content="A three-minute self-assessment for founders and revenue leaders. Score your growth engine across six dimensions, see where you sit on the growth maturity model, and get a recommendation you can act on, including when the answer is not yet.">
+<link rel="canonical" href="https://vglstudio.ai/readiness">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vglstudio.ai/readiness">
+<meta property="og:title" content="AI Growth Readiness Check, VGL Studio">
+<meta property="og:description" content="Three minutes. Six dimensions. A diagnostic you can act on, whether or not you ever talk to us.">
+<meta property="og:site_name" content="VGL Studio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Growth Readiness Check">
+<meta name="twitter:description" content="Score your growth engine in three minutes.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "AI Growth Readiness Check",
+      "url": "https://vglstudio.ai/readiness",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "description": "A three-minute self-assessment scoring a company's growth engine across six dimensions and placing it on a five-stage growth maturity model.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": { "@type": "Organization", "name": "VGL Studio", "url": "https://vglstudio.ai/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "VGL Studio", "item": "https://vglstudio.ai/" },
+        { "@type": "ListItem", "position": 2, "name": "AI Growth Readiness Check", "item": "https://vglstudio.ai/readiness" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header id="siteheader">
+  <div class="wrap nav">
+    <a class="brand" href="/">VGL Studio</a>
+    <button class="navtoggle" id="navtoggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav aria-label="Primary" id="primarynav">
+      <ul>
+        <li class="hasmenu">
+          <a href="/ai-managed-pipeline">Solutions</a>
+          <div class="menu">
+            <a href="/ai-managed-pipeline">AI Managed Pipeline<span class="ms">Qualified conversations, managed end to end</span></a>
+            <a href="/ai-build-lab">AI Build Lab<span class="ms">The systems you can't practically staff for</span></a>
+            <a href="/pricing">Pricing &amp; terms<span class="ms">What each engagement costs</span></a>
+          </div>
+        </li>
+        <li><a href="/readiness">Readiness check</a></li>
+        <li><a href="/insights">Insights</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="https://meetings.hubspot.com/leckart2">Get in touch &rarr;</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="phero">
+  <div class="wrap">
+    <span class="pill">AI Growth Readiness Check</span>
+    <h1>Find out where your growth engine actually stands.</h1>
+    <p class="sub">Twelve questions. About three minutes. A diagnostic you can act on whether or not you ever talk to us.</p>
+    <p class="deck">You'll get a score across six dimensions, your position on the growth maturity model, and a recommendation, which sometimes comes back as "not yet." We ask for an email at the end to send the full report.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="diag">
+
+      <div class="diagcard" id="screen-intro">
+        <h2 style="font-size:1.6rem;margin-bottom:14px">Before you start</h2>
+        <p style="color:var(--slate);margin-bottom:20px">Twelve questions, one screen each. Answer for how things actually work today rather than how they're supposed to. At the end you'll enter an email address to see your full report.</p>
+        <div class="gatenote">
+          <strong style="color:var(--ink)">What you get back:</strong> a score out of 36, your stage on the five-step growth maturity model, a breakdown across all six dimensions, and a specific recommendation with a next step.
+        </div>
+        <div class="btns" style="margin-top:0">
+          <button class="btn btn-primary" id="start-btn" type="button">Start the check</button>
+        </div>
+      </div>
+
+      <div class="diagcard" id="screen-q" hidden>
+        <div class="progwrap">
+          <div class="progtext"><span id="qcount">Question 1 of 12</span><span id="qdimlabel"></span></div>
+          <div class="progbar"><div class="progfill" id="progfill"></div></div>
+        </div>
+        <p class="qdim" id="qdim"></p>
+        <h2 class="qtext" id="qtext"></h2>
+        <div class="opts" id="opts"></div>
+        <div class="diagnav">
+          <button class="linkbtn" id="back-btn" type="button">&larr; Back</button>
+          <span style="font-size:0.86rem;color:var(--slate)">Select an answer to continue</span>
+        </div>
+      </div>
+
+      <div class="diagcard" id="screen-gate" hidden>
+        <h2 style="font-size:1.6rem;margin-bottom:12px">Your report is ready</h2>
+        <p style="color:var(--slate);margin-bottom:20px">All twelve answered. Enter your details and your full diagnostic appears on the next screen.</p>
+        <div class="gatenote" id="gate-summary"></div>
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input type="text" id="f-name" autocomplete="name" placeholder="Your name">
+          <p class="err" id="e-name">Enter your name.</p>
+        </div>
+        <div class="field">
+          <label for="f-email">Work email</label>
+          <input type="email" id="f-email" autocomplete="email" placeholder="you@company.com">
+          <p class="err" id="e-email">Enter a valid work email address.</p>
+        </div>
+        <div class="field">
+          <label for="f-company">Company</label>
+          <input type="text" id="f-company" autocomplete="organization" placeholder="Company name">
+          <p class="err" id="e-company">Enter your company name.</p>
+        </div>
+        <div class="btns" style="margin-top:10px">
+          <button class="btn btn-primary" id="reveal-btn" type="button">Show my report</button>
+        </div>
+        <p style="font-size:0.84rem;color:var(--slate);margin-top:16px">We'll email you a copy. No sequence, no drip, no sharing your details.</p>
+      </div>
+
+      <div class="diagcard" id="screen-result" hidden>
+        <div class="scorehead">
+          <div class="scorenum" id="r-score">0<span>/36</span></div>
+          <div class="stagename" id="r-stage"></div>
+          <p class="stagedesc" id="r-stagedesc"></p>
+          <div class="ladder" id="r-ladder"></div>
+        </div>
+        <h3 style="font-size:1.15rem;color:var(--navy);margin-bottom:6px">Across the six dimensions</h3>
+        <div id="r-dims"></div>
+        <div id="r-rec"></div>
+        <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--rule)">
+          <p style="font-size:0.9rem;color:var(--slate)">A copy is on its way to your inbox. If you'd rather talk it through, <a href="https://meetings.hubspot.com/leckart2">book a short call</a>, or read the <a href="/insights">insights hub</a> for the thinking behind the model.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>VGL Studio</h4>
+        <p style="max-width:34ch">Two AI-native growth systems for B2B: managed pipeline, and the builds you own.</p>
+        <p style="margin-top:16px"><a href="https://meetings.hubspot.com/leckart2">Schedule a call</a></p>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="/ai-managed-pipeline">AI Managed Pipeline</a></li>
+          <li><a href="/ai-build-lab">AI Build Lab</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/insights">Insights hub</a></li>
+          <li><a href="/readiness">AI Growth Readiness check</a></li>
+          <li><a href="/#where-we-fit">Compare the options</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Vision Growth Labs</h4>
+        <ul>
+          <li><a href="https://visiongrowthlabs.com">Why VGL</a></li>
+          <li><a href="https://visiongrowthlabs.com/what-we-do.html">What we do</a></li>
+          <li><a href="https://go.clientlogin.app">Client login</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>&copy; 2026 Vision Growth Labs. All rights reserved.</span>
+      <span>Growth-as-a-Service &middot; visiongrowthlabs.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== WIRE THIS UP: paste the GHL inbound webhook URL here ===== */
+var GHL_WEBHOOK_URL = "";
+
+(function(){
+  var hdr=document.getElementById('siteheader');
+  function onScroll(){ hdr.classList.toggle('scrolled', window.scrollY>60); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  var tg=document.getElementById('navtoggle'), nv=document.getElementById('primarynav');
+  if(tg&&nv){ tg.addEventListener('click',function(){
+    var open=nv.classList.toggle('open');
+    tg.setAttribute('aria-expanded',open?'true':'false');
+    tg.classList.toggle('on',open);
+    hdr.classList.toggle('navopen',open);
+  }); }
+})();
+
+var DIMS = [
+  {key:'dependency', name:'Growth dependency',            track:'pipeline'},
+  {key:'econ',       name:'Unit economics',               track:'pipeline'},
+  {key:'spe',        name:'Strategy &middot; Platform &middot; Execution', track:'pipeline'},
+  {key:'systems',    name:'Systems gap',                  track:'build'},
+  {key:'leverage',   name:'AI leverage',                  track:'both'},
+  {key:'icp',        name:'ICP and ownership',            track:'gate'}
+];
+
+var Q = [
+  {d:0,t:"Where does most new business come from today?",o:[
+    "Founder or leadership relationships",
+    "Referrals that arrive, but we don't control them",
+    "Inbound marketing or outbound we run ourselves",
+    "A deliberate partner or channel that produces repeatedly"]},
+  {d:0,t:"If your founder or top seller stopped selling for 90 days, what happens to pipeline?",o:[
+    "It stops","It drops sharply","It dips but holds","It largely continues"]},
+  {d:1,t:"Do you know what a qualified conversation costs you today?",o:[
+    "No idea","A rough sense","Tracked, but nobody acts on it","Tracked and actively managed"]},
+  {d:1,t:"Over the last year, how did GTM spend move against pipeline produced?",o:[
+    "Spend up, pipeline flat or down","Both up, roughly in proportion","Spend flat, pipeline up","Spend down, pipeline up"]},
+  {d:2,t:"How many separate tools touch a lead before it becomes a conversation?",o:[
+    "Five or more, and they don't talk","Three or four, loosely connected","Two or three, properly integrated","One orchestrated system"]},
+  {d:2,t:"Who owns moving data between those systems?",o:[
+    "Nobody, it's manual","Whoever notices it broke","It's part of someone's job","It's automated"]},
+  {d:3,t:"How does reporting reach your clients or leadership today?",o:[
+    "Spreadsheets and email attachments","Manual, but templated","Semi-automated with some manual steps","Live and self-serve"]},
+  {d:3,t:"Is there a system your team wishes existed that nobody has built?",o:[
+    "Yes, several","Yes, one significant one","Minor gaps only","No, we're covered"]},
+  {d:4,t:"Where is AI actually running in your go-to-market today?",o:[
+    "Nowhere yet","Individuals using chatbots ad hoc","One or two real workflows","Core to targeting and execution"]},
+  {d:4,t:"How much of your growth comes from things that scale without adding headcount?",o:[
+    "Almost none, growing means hiring",
+    "A little, but it's still mostly headcount",
+    "A meaningful share",
+    "Most of it, systems and partners do the scaling"]},
+  {d:5,t:"How well defined are your ICP and positioning?",o:[
+    "Not documented anywhere","Roughly understood, not written down","Documented, but doesn't govern targeting","Documented and it drives who we target"]},
+  {d:5,t:"If you ended every vendor relationship tomorrow, what would you keep?",o:[
+    "Very little","The contact list","Contacts and the CRM","Everything, the data and systems are ours"]}
+];
+
+var STAGES = [
+  {name:"Founder-led", min:0,  max:8,  d:"Growth runs through relationships and individual effort. It works until it has to scale, and every path past it looks expensive."},
+  {name:"Assembled",   min:9,  max:15, d:"Tools have been bought but not connected. There's activity and there's data, and the gap between them is manual work."},
+  {name:"Operating",   min:16, max:22, d:"A system exists and someone owns it. The remaining cost is in the seams, the handoffs nobody automated."},
+  {name:"Orchestrated",min:23, max:29, d:"Intelligence drives targeting and execution runs without being pushed. Most companies never get here."},
+  {name:"Compounding", min:30, max:36, d:"Systems are owned, connected and improving each other. Growth is infrastructure rather than effort."}
+];
+
+var answers = new Array(12).fill(null), idx = 0;
+var $ = function(id){ return document.getElementById(id); };
+
+function show(id){
+  ['screen-intro','screen-q','screen-gate','screen-result'].forEach(function(s){ $(s).hidden = (s!==id); });
+  window.scrollTo({top:120, behavior:'smooth'});
+}
+
+function render(){
+  var q = Q[idx], dim = DIMS[q.d];
+  $('qcount').textContent = 'Question ' + (idx+1) + ' of 12';
+  $('qdimlabel').innerHTML = dim.name;
+  $('qdim').innerHTML = dim.name;
+  $('qtext').innerHTML = q.t;
+  $('progfill').style.width = ((idx)/12*100) + '%';
+  $('back-btn').disabled = (idx===0);
+  var box = $('opts'); box.innerHTML = '';
+  q.o.forEach(function(label, i){
+    var b = document.createElement('button');
+    b.type='button'; b.className='opt' + (answers[idx]===i ? ' sel' : '');
+    b.innerHTML = label;
+    b.addEventListener('click', function(){
+      answers[idx] = i;
+      if (idx < 11){ idx++; render(); } else { openGate(); }
+    });
+    box.appendChild(b);
+  });
+}
+
+function dimScores(){
+  var s = [0,0,0,0,0,0];
+  Q.forEach(function(q,i){ s[q.d] += (answers[i]||0); });
+  return s;
+}
+
+function openGate(){
+  $('progfill').style.width = '100%';
+  var d = dimScores(), weakest = 0;
+  for (var i=1;i<6;i++){ if (d[i] < d[weakest]) weakest = i; }
+  $('gate-summary').innerHTML = '<strong style="color:var(--ink)">From your answers:</strong> your lowest-scoring dimension is <strong style="color:var(--navy)">' +
+    DIMS[weakest].name + '</strong>. Your full score, maturity stage and recommendation are on the next screen.';
+  show('screen-gate');
+}
+
+function recommend(total, d){
+  // answers[10] is the ICP/positioning question, it gates everything else
+  // Strategy gate: without a defined ICP and positioning, a system produces activity.
+  if (answers[10] <= 1) {
+    return {cls:'rec-strategy', title:'Start with strategy, not a system',
+      body:["Your answers point to an ICP and positioning that aren't yet governing who you target. That matters more than it sounds: both of our engagements are governed by that definition, and running either one without it produces activity rather than pipeline.",
+            "The honest recommendation is strategy work first, ICP definition, positioning, and the target account criteria that follow from them. That's Vision Growth Labs rather than VGL Studio, and it's a shorter piece of work than either build.",
+            "Once that exists, come back and retake this. The recommendation will almost certainly change."],
+      cta:[["Talk to Vision Growth Labs","https://visiongrowthlabs.com"],["Book a call","https://meetings.hubspot.com/leckart2"]]};
+  }
+  var pipelineNeed = ((9-d[0]) + (9-d[1]) + (9-d[2])) / 3;   // 0-9
+  var buildNeed    = ((9-d[3]) * 2 + (9-d[4])) / 3;          // 0-9, manual load weighted double
+  if (total >= 30) {
+    return {cls:'rec-both', title:"You're further along than most",
+      body:["Scores in this range mean the fundamentals are working: pipeline doesn't depend on one person, the systems talk, and AI is doing real work rather than being discussed.",
+            "The remaining leverage is usually narrow and specific rather than structural, one workflow still manual, one buyer-facing tool that would create demand earlier. That's a Build Lab conversation more than a pipeline one.",
+            "If nothing here is bothering you, the right answer may be that you don't need us. That's a legitimate outcome of this check."],
+      cta:[["See AI Build Lab","/ai-build-lab"],["Read the insights hub","/insights"]]};
+  }
+  if (pipelineNeed >= buildNeed + 1.2) {
+    return {cls:'rec-pipeline', title:'AI Managed Pipeline is the fit',
+      body:["Your weakest dimensions are on the pipeline side, where new business comes from, what the stack costs against what it produces, or whether the systems connect at all.",
+            "That's the problem Managed Pipeline is built for: one engine replacing the data platform, the outbound tooling and the RevOps time spent connecting them, with an embedded team handling replies. Three to four weeks to a first qualified conversation.",
+            "Engagements run $2,500 to $5,000 a month with no long-term contract, and you own the data and CRM infrastructure throughout."],
+      cta:[["See how it works","/ai-managed-pipeline"],["Book a call","https://meetings.hubspot.com/leckart2"]]};
+  }
+  if (buildNeed >= pipelineNeed + 1.2) {
+    return {cls:'rec-build', title:'AI Build Lab is the fit',
+      body:["Your pipeline fundamentals are in reasonable shape. What's dragging is the manual load, work running on spreadsheets, reporting that someone assembles by hand, or a system your team knows should exist and nobody has built.",
+            "That's a build sprint: one opportunity, scoped small enough to ship in weeks, integrated with what you already run, and owned by you at handover. No development team to hire.",
+            "Engagements run $2,000 to $5,000 a month across a two to three month sprint. The best first build is usually the smallest one that proves value."],
+      cta:[["See the build tracks","/ai-build-lab"],["Book a working session","https://meetings.hubspot.com/leckart2"]]};
+  }
+  return {cls:'rec-both', title:'Both apply, start with pipeline',
+    body:["Your answers show pressure on both sides: top-of-funnel isn't producing predictably, and there's manual work that shouldn't still be manual.",
+          "Running both at once doubles the surface area before either has proven out. The usual sequence is Managed Pipeline first, because conversations create the urgency and the data that make the build obvious.",
+          "Build Lab follows once you know which buyer-facing tool or internal system would move the number, and by then you'll have evidence rather than a guess."],
+    cta:[["See AI Managed Pipeline","/ai-managed-pipeline"],["See AI Build Lab","/ai-build-lab"]]};
+}
+
+function renderResult(){
+  var d = dimScores(), total = d.reduce(function(a,b){return a+b;},0);
+  $('r-score').innerHTML = total + '<span>/36</span>';
+  var st = STAGES.filter(function(s){ return total>=s.min && total<=s.max; })[0];
+  $('r-stage').textContent = st.name;
+  $('r-stagedesc').textContent = st.d;
+  $('r-ladder').innerHTML = STAGES.map(function(s){
+    return '<div class="rung' + (s.name===st.name?' on':'') + '">' + s.name + '</div>'; }).join('');
+  $('r-dims').innerHTML = DIMS.map(function(dim,i){
+    var v = d[i], pct = v/6*100, cls = v<=2?'low':(v<=4?'mid':'');
+    return '<div class="dimrow"><div class="dimname">'+dim.name+'</div>'+
+      '<div class="dimtrack"><div class="dimfill '+cls+'" style="width:'+pct+'%"></div></div>'+
+      '<div class="dimval">'+v+'/6</div></div>';
+  }).join('');
+  var r = recommend(total, d);
+  $('r-rec').innerHTML = '<div class="reccard '+r.cls+'"><h3>'+r.title+'</h3>'+
+    r.body.map(function(p){return '<p>'+p+'</p>';}).join('') +
+    '<div class="btns">'+ r.cta.map(function(c,i){
+      return '<a class="btn '+(i===0?'btn-light':'btn-outline-light')+'" href="'+c[1]+'">'+c[0]+'</a>'; }).join('') +
+    '</div></div>';
+  show('screen-result');
+}
+
+function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+
+document.addEventListener('DOMContentLoaded', function(){
+  $('start-btn').addEventListener('click', function(){ idx=0; render(); show('screen-q'); });
+  $('back-btn').addEventListener('click', function(){ if(idx>0){ idx--; render(); } });
+
+  ['f-name','f-email','f-company'].forEach(function(id){
+    $(id).addEventListener('input', function(){ $('e'+id.slice(1)).classList.remove('on'); });
+  });
+
+  $('reveal-btn').addEventListener('click', function(){
+    var name=$('f-name').value.trim(), email=$('f-email').value.trim(), company=$('f-company').value.trim(), bad=false;
+    if(!name){ $('e-name').classList.add('on'); bad=true; }
+    if(!validEmail(email)){ $('e-email').classList.add('on'); bad=true; }
+    if(!company){ $('e-company').classList.add('on'); bad=true; }
+    if(bad) return;
+
+    var d=dimScores(), total=d.reduce(function(a,b){return a+b;},0);
+    var st=STAGES.filter(function(s){return total>=s.min&&total<=s.max;})[0];
+    var payload={name:name,email:email,company:company,score:total,stage:st.name,
+      recommendation:recommend(total,d).title,
+      dimensions:DIMS.reduce(function(o,dim,i){o[dim.key]=d[i];return o;},{}),
+      answers:answers, source:'ai-growth-readiness'};
+
+    if (GHL_WEBHOOK_URL){
+      fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(payload)}).catch(function(){});
+    }
+    renderResult();   // never trap the user behind a failed request
+  });
+});
+</script>
+</body>
+</html>
