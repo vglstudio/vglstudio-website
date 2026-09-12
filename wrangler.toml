@@ -1,0 +1,7 @@
+name = "vgl-studio"
+compatibility_date = "2026-09-12"
+
+# Static site only — no Worker script. Serves the repo root as assets.
+[assets]
+directory = "./"
+not_found_handling = "404-page"
