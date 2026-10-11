@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7WKP0EM36C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7WKP0EM36C');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hidden Growth & Sales Art | VGL Growth Knowledge Hub</title>
@@ -335,6 +343,18 @@
     });
   });
 })();
+</script>
+<script>
+/* GA4: booking clicks */
+document.addEventListener('click', function (e) {
+  if (typeof gtag !== 'function') return;
+  var a = e.target.closest('a');
+  if (!a) return;
+  var href = a.getAttribute('href') || '';
+  if (/meetings\.hubspot\.com|leadconnectorhq\.com\/widget\/bookings/.test(href)) {
+    gtag('event', 'book_call_click', { link_text: (a.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 60), page_path: location.pathname });
+  }
+}, true);
 </script>
 </body>
 </html>
