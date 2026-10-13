@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AI Growth Readiness Check | 3-Minute Diagnostic, VGL Studio</title>
-<meta name="description" content="A three-minute self-assessment for founders and revenue leaders. Score your growth engine across six dimensions, see where you sit on the growth maturity model, and get a recommendation you can act on, including when the answer is not yet.">
+<meta name="description" content="A three-minute self-assessment for founders and revenue leaders: score your growth engine across six dimensions and get a recommendation you can act on.">
 <link rel="canonical" href="https://vglstudio.ai/readiness">
 <meta name="robots" content="index, follow">
 
@@ -25,6 +25,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI Growth Readiness Check">
 <meta name="twitter:description" content="Score your growth engine in three minutes.">
+<meta property="og:image" content="https://vglstudio.ai/images/og-vgl-studio.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://vglstudio.ai/images/og-vgl-studio.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,7 +79,7 @@
     </nav>
     <div class="navactions">
       <a class="nav-diag here-pill" href="/readiness"><span class="dot"></span>Growth Readiness</a>
-      <a class="nav-cta" href="https://meetings.hubspot.com/leckart2">Schedule a demo</a>
+      <a class="nav-cta" href="https://api.leadconnectorhq.com/widget/bookings/loren-eckart">Schedule a demo</a>
     </div>
   </div>
 </header>
@@ -156,7 +160,7 @@
         <div id="r-dims"></div>
         <div id="r-rec"></div>
         <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--rule)">
-          <p style="font-size:0.9rem;color:var(--slate)">A copy is on its way to your inbox. If you'd rather talk it through, <a href="https://meetings.hubspot.com/leckart2">book a short call</a>, or read the <a href="/insights">insights hub</a> for the thinking behind the model.</p>
+          <p style="font-size:0.9rem;color:var(--slate)">A copy is on its way to your inbox. If you'd rather talk it through, <a href="https://api.leadconnectorhq.com/widget/bookings/loren-eckart">book a short call</a>, or read the <a href="/insights">insights hub</a> for the thinking behind the model.</p>
         </div>
       </div>
 
@@ -172,7 +176,7 @@
       <div>
         <h4>VGL Studio</h4>
         <p style="max-width:34ch">Two AI-native growth systems for B2B: managed pipeline, and the builds you own.</p>
-        <p style="margin-top:16px"><a href="https://meetings.hubspot.com/leckart2">Schedule a call</a></p>
+        <p style="margin-top:16px"><a href="https://api.leadconnectorhq.com/widget/bookings/loren-eckart">Schedule a call</a></p>
       </div>
       <div>
         <h4>Solutions</h4>
@@ -326,7 +330,7 @@ function recommend(total, d){
       body:["Your answers point to an ICP and positioning that aren't yet governing who you target. That matters more than it sounds: both of our engagements are governed by that definition, and running either one without it produces activity rather than pipeline.",
             "The honest recommendation is strategy work first, ICP definition, positioning, and the target account criteria that follow from them. That's Vision Growth Labs rather than VGL Studio, and it's a shorter piece of work than either build.",
             "Once that exists, come back and retake this. The recommendation will almost certainly change."],
-      cta:[["Talk to Vision Growth Labs","https://visiongrowthlabs.com"],["Book a call","https://meetings.hubspot.com/leckart2"]]};
+      cta:[["Talk to Vision Growth Labs","https://visiongrowthlabs.com"],["Book a call","https://api.leadconnectorhq.com/widget/bookings/loren-eckart"]]};
   }
   var pipelineNeed = ((9-d[0]) + (9-d[1]) + (9-d[2])) / 3;   // 0-9
   var buildNeed    = ((9-d[3]) * 2 + (9-d[4])) / 3;          // 0-9, manual load weighted double
@@ -342,14 +346,14 @@ function recommend(total, d){
       body:["Your weakest dimensions are on the pipeline side, where new business comes from, what the stack costs against what it produces, or whether the systems connect at all.",
             "That's the problem Managed Pipeline is built for: one engine replacing the data platform, the outbound tooling and the RevOps time spent connecting them, with an embedded team handling replies. Three to four weeks to a first qualified conversation.",
             "Engagements run $2,500 to $5,000 a month with no long-term contract, and you own the data and CRM infrastructure throughout."],
-      cta:[["See how it works","/ai-managed-pipeline"],["Book a call","https://meetings.hubspot.com/leckart2"]]};
+      cta:[["See how it works","/ai-managed-pipeline"],["Book a call","https://api.leadconnectorhq.com/widget/bookings/loren-eckart"]]};
   }
   if (buildNeed >= pipelineNeed + 1.2) {
     return {cls:'rec-build', title:'AI Build Lab is the fit',
       body:["Your pipeline fundamentals are in reasonable shape. What's dragging is the manual load, work running on spreadsheets, reporting that someone assembles by hand, or a system your team knows should exist and nobody has built.",
             "That's a build sprint: one opportunity, scoped small enough to ship in weeks, integrated with what you already run, and owned by you at handover. No development team to hire.",
             "Engagements run $2,000 to $5,000 a month across a two to three month sprint. The best first build is usually the smallest one that proves value."],
-      cta:[["See the build tracks","/ai-build-lab"],["Book a working session","https://meetings.hubspot.com/leckart2"]]};
+      cta:[["See the build tracks","/ai-build-lab"],["Book a working session","https://api.leadconnectorhq.com/widget/bookings/loren-eckart"]]};
   }
   return {cls:'rec-both', title:'Both apply, start with pipeline',
     body:["Your answers show pressure on both sides: top-of-funnel isn't producing predictably, and there's manual work that shouldn't still be manual.",
